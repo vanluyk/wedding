@@ -31,21 +31,57 @@
 
     body {
       min-height: 100vh;
-      display: grid;
-      place-items: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       padding: 2rem 1rem;
       text-align: center;
       letter-spacing: 0.04em;
     }
 
+    .hero {
+      width: min(100%, 76rem);
+      min-height: min(82vh, 48rem);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border: 1px solid rgba(212, 175, 106, 0.5);
+      border-radius: 1.5rem;
+      overflow: hidden;
+      background: #0d0d0d;
+      box-shadow: 0 0 0 1px rgba(212, 175, 106, 0.1), 0 0 38px var(--shadow);
+      padding-left: clamp(1.25rem, 4vw, 4rem);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("assets/PXL_20260306_104440753.MP~2.jpg");
+      background-size: cover;
+      background-position: 60% center;
+      transform: scale(1.04);
+      filter: saturate(0.8) brightness(0.52);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(8, 8, 8, 0.82) 0%, rgba(8, 8, 8, 0.32) 40%, rgba(8, 8, 8, 0.52) 100%);
+    }
+
     .card {
-      width: min(100%, 42rem);
-      padding: 3rem 2rem;
-      border: 1px solid rgba(212, 175, 106, 0.4);
+      position: relative;
+      z-index: 1;
+      width: min(100%, 34rem);
+      padding: 2.5rem 1.75rem;
+      border: 1px solid rgba(212, 175, 106, 0.35);
       border-radius: 1.25rem;
-      background: rgba(18, 17, 15, 0.78);
-      box-shadow: 0 0 0 1px rgba(212, 175, 106, 0.1), 0 0 30px var(--shadow);
+      background: rgba(18, 17, 15, 0.26);
       backdrop-filter: blur(2px);
+      text-align: left;
     }
 
     .eyebrow {
@@ -100,18 +136,20 @@
   </style>
 </head>
 <body>
-  <main class="card">
-    <p class="eyebrow">Celebration livestream</p>
-    <h1>Join Us Online</h1>
-    <p>The ceremony begins at <strong>11:15am EST</strong> on <strong>12/31/2026</strong>.</p>
+  <main class="hero">
+    <div class="card">
+      <p class="eyebrow">Celebration livestream</p>
+      <h1>Join Us Online</h1>
+      <p>The ceremony begins at <strong>11:15am EST</strong> on <strong>12/31/2026</strong>.</p>
 
-    <!-- Before the link exists: -->
-    <p>The livestream link will appear here shortly before the ceremony.</p>
+      <!-- Before the link exists: -->
+      <p>The livestream link will appear here shortly before the ceremony.</p>
 
-    <!-- Later, replace the paragraph above with: -->
-    <!-- <a class="button" href="https://YOUR-STREAM-LINK">Watch the livestream</a> -->
+      <!-- Later, replace the paragraph above with: -->
+      <!-- <a class="button" href="https://YOUR-STREAM-LINK">Watch the livestream</a> -->
 
-    <!-- <p>Trouble connecting? Contact [name] at [phone/email].</p> -->
+      <!-- <p>Trouble connecting? Contact [name] at [phone/email].</p> -->
+    </div>
   </main>
 </body>
 </html>
