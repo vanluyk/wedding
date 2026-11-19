@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#090909" />
+  <title>Our Story in Photos | Katie &amp; Joseph</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      --bg-soft: #12110f;
+      --bg-deep: #090909;
+      --gold: #d4af6a;
+      --gold-soft: #f7e3a3;
+      --text: #f8f2e7;
+      --muted: #e6d7a8;
+      --border: rgba(212, 175, 106, 0.34);
+      --panel: rgba(18, 17, 15, 0.82);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      min-height: 100%;
+      background: var(--bg-deep);
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 1.5rem 1rem 4rem;
+      background:
+        radial-gradient(ellipse at 50% 0, rgba(212, 175, 106, 0.13), transparent 34rem),
+        linear-gradient(180deg, var(--bg-soft), var(--bg-deep) 46rem);
+      color: var(--text);
+      font-family: Georgia, "Times New Roman", serif;
+    }
+
+    .page {
+      width: min(100%, 70rem);
+      margin: 0 auto;
+    }
+
+    .topbar a {
+      color: var(--gold-soft);
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(212, 175, 106, 0.5);
+    }
+
+    .page-header {
+      padding: clamp(2.5rem, 7vw, 5rem) 1rem 3.5rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 0.7rem;
+      color: var(--gold-soft);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      color: var(--gold-soft);
+      font-size: clamp(2.4rem, 7vw, 4.5rem);
+      font-weight: 400;
+      line-height: 1.08;
+      text-shadow: 0 0 20px rgba(212, 175, 106, 0.14);
+    }
+
+    .intro {
+      margin: 1rem auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.7;
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      gap: 2rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .timeline::before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--gold), var(--gold), transparent);
+      content: "";
+      transform: translateX(-50%);
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 3rem minmax(0, 1fr);
+      align-items: center;
+    }
+
+    .timeline-item::before {
+      z-index: 1;
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: center;
+      width: 0.7rem;
+      height: 0.7rem;
+      border: 1px solid var(--gold-soft);
+      border-radius: 50%;
+      background: var(--bg-deep);
+      box-shadow: 0 0 0 4px rgba(212, 175, 106, 0.1);
+      content: "";
+    }
+
+    .timeline-item figure {
+      grid-column: 1;
+      grid-row: 1;
+      width: min(100%, 29rem);
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+      background: var(--panel);
+      box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
+    }
+
+    .timeline-item:nth-child(even) figure {
+      grid-column: 3;
+      justify-self: end;
+    }
+
+    .timeline-item img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #0a0a0a;
+    }
+
+    figcaption {
+      padding: 0.95rem 1.1rem 1.05rem;
+      color: var(--gold-soft);
+      font-size: 1rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    .photo-caption {
+      display: block;
+      margin-top: 0.4rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      letter-spacing: normal;
+      line-height: 1.55;
+      white-space: pre-line;
+    }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 1rem 0.85rem 3rem;
+      }
+
+      .page-header {
+        padding: 2.5rem 0.25rem 2rem;
+      }
+
+      .timeline {
+        gap: 1.25rem;
+        padding-left: 1.25rem;
+      }
+
+      .timeline::before {
+        left: 0.35rem;
+        transform: none;
+      }
+
+      .timeline-item {
+        display: block;
+        padding-left: 0.75rem;
+      }
+
+      .timeline-item::before {
+        position: absolute;
+        top: 1.25rem;
+        left: -1.25rem;
+      }
+
+      .timeline-item figure,
+      .timeline-item:nth-child(even) figure {
+        width: 100%;
+      }
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <nav class="topbar" aria-label="Main navigation">
+      <a href="index.html">Back to home</a>
+    </nav>
+
+    <header class="page-header">
+      <p class="eyebrow">Katie &amp; Joseph</p>
+      <h1>Our Story in Photos</h1>
+      <p class="intro">A few favorite moments, in order.</p>
+    </header>
+
+    <main>
+      <ol class="timeline" aria-label="Photo timeline">
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2021-12-31-home-cat/photo.jpg" alt="Two hours before we met. Katie cleared the living room for a NYE game night with strangers." loading="lazy" />
+            <figcaption>
+              <time datetime="2021-12-31">December 31, 2021</time>
+              <span class="photo-caption">Two hours before we met. Katie cleared the living room for a NYE game night with strangers.</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2022-03-26-nyc-vessel/photo.jpg" alt="First trip together to NYC with friends." loading="lazy" />
+            <figcaption>
+              <time datetime="2022-03-26">March 26, 2022</time>
+              <span class="photo-caption">First trip together to NYC with friends.</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2022-08-14-six-flags/photo.jpg" alt="Summer visit to Six Flags. Joe&#x27;s covering the coffee spill on Katie&#x27;s white shirt!" loading="lazy" />
+            <figcaption>
+              <time datetime="2022-08-14">August 14, 2022</time>
+              <span class="photo-caption">Summer visit to Six Flags. Joe&#x27;s covering the coffee spill on Katie&#x27;s white shirt!</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2022-10-08-autumn-walk/photo.jpg" alt="Beautiful fall day leaf peeping" loading="lazy" />
+            <figcaption>
+              <time datetime="2022-10-08">October 8, 2022</time>
+              <span class="photo-caption">Beautiful fall day leaf peeping</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2022-11-26-kiss-me-arch/photo.jpg" alt="Christmas shopping at the Snowport market" loading="lazy" />
+            <figcaption>
+              <time datetime="2022-11-26">November 26, 2022</time>
+              <span class="photo-caption">Christmas shopping at the Snowport market</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2023-01-06-learning-to-ski/photo.jpg" alt="First time skiing!" loading="lazy" />
+            <figcaption>
+              <time datetime="2023-01-06">January 6, 2023</time>
+              <span class="photo-caption">First time skiing!</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2023-09-03-pool-day/photo.jpg" alt="Playing hookie at the waterpark" loading="lazy" />
+            <figcaption>
+              <time datetime="2023-09-03">September 3, 2023</time>
+              <span class="photo-caption">Playing hookie at the waterpark</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2023-10-09-kit-kat-club/photo.jpg" alt="All dressed up for Cabaret at the KitKat club" loading="lazy" />
+            <figcaption>
+              <time datetime="2023-10-09">October 9, 2023</time>
+              <span class="photo-caption">All dressed up for Cabaret at the KitKat club</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2023-10-11-eiffel-tower/photo.jpg" alt="Macaroons in Paris" loading="lazy" />
+            <figcaption>
+              <time datetime="2023-10-11">October 11, 2023</time>
+              <span class="photo-caption">Macaroons in Paris</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2023-10-15-amsterdam-canal/photo.jpg" alt="Window shopping in Amsterdam" loading="lazy" />
+            <figcaption>
+              <time datetime="2023-10-15">October 15, 2023</time>
+              <span class="photo-caption">Window shopping in Amsterdam</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2023-12-24-grand-interior/photo.jpg" alt="Christmas Eve at the opera house" loading="lazy" />
+            <figcaption>
+              <time datetime="2023-12-24">December 24, 2023</time>
+              <span class="photo-caption">Christmas Eve at the opera house</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2024-08-21-acadia-coast/photo.jpg" alt="Camping at Acadia National Park" loading="lazy" />
+            <figcaption>
+              <time datetime="2024-08-21">August 21, 2024</time>
+              <span class="photo-caption">Camping at Acadia National Park</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2024-09-14-lakeside-photo/photo.jpg" alt="All dressed up for our friends&#x27; wedding" loading="lazy" />
+            <figcaption>
+              <time datetime="2024-09-14">September 14, 2024</time>
+              <span class="photo-caption">All dressed up for our friends&#x27; wedding</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2024-10-05-autumn-day/photo.jpg" alt="Immediately prior to getting lost in the hedge maze" loading="lazy" />
+            <figcaption>
+              <time datetime="2024-10-05">October 5, 2024</time>
+              <span class="photo-caption">Immediately prior to getting lost in the hedge maze</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2024-10-19-autumn-park/photo.jpg" alt="Afternoon stroll at Mount Auburn Cemetary" loading="lazy" />
+            <figcaption>
+              <time datetime="2024-10-19">October 19, 2024</time>
+              <span class="photo-caption">Afternoon stroll at Mount Auburn Cemetary</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2024-11-14-concert-night/photo.jpg" alt="Not Dylan Thomas and Not Patty Smith" loading="lazy" />
+            <figcaption>
+              <time datetime="2024-11-14">November 14, 2024</time>
+              <span class="photo-caption">Not Dylan Thomas and Not Patty Smith</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2024-11-16-niagara-falls/photo.jpg" alt="Taking in the mist at Niagara Falls" loading="lazy" />
+            <figcaption>
+              <time datetime="2024-11-16">November 16, 2024</time>
+              <span class="photo-caption">Taking in the mist at Niagara Falls</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2025-01-31-stowe/photo.jpg" alt="Skiing at our favorite mountain" loading="lazy" />
+            <figcaption>
+              <time datetime="2025-01-31">January 31, 2025</time>
+              <span class="photo-caption">Skiing at our favorite mountain</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2025-03-17-winter-sculpture/photo.jpg" alt="Breckenridge, Colorado at 10,000ft elevation" loading="lazy" />
+            <figcaption>
+              <time datetime="2025-03-17">March 17, 2025</time>
+              <span class="photo-caption">Breckenridge, Colorado at 10,000ft elevation</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2025-09-26-magic-avatar/photo.jpg" alt="My cabbages!" loading="lazy" />
+            <figcaption>
+              <time datetime="2025-09-26">September 26, 2025</time>
+              <span class="photo-caption">My cabbages!</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2026-03-03-spa-selfie/photo.jpg" alt="Excited for the spa after 18 hours of flights and airports" loading="lazy" />
+            <figcaption>
+              <time datetime="2026-03-03">March 3, 2026</time>
+              <span class="photo-caption">Excited for the spa after 18 hours of flights and airports</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2026-03-04-northern-lights/photo.jpg" alt="Snowmobiling on the frozen Torne river. We&#x27;re both terrified!" loading="lazy" />
+            <figcaption>
+              <time datetime="2026-03-04">March 4, 2026</time>
+              <span class="photo-caption">Snowmobiling on the frozen Torne river. We&#x27;re both terrified!</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2026-03-06-snowy-break/photo.jpg" alt="The morning after she said &quot;Yes!&quot;" loading="lazy" />
+            <figcaption>
+              <time datetime="2026-03-06">March 6, 2026</time>
+              <span class="photo-caption">The morning after she said &quot;Yes!&quot;</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li class="timeline-item">
+          <figure>
+            <img src="gallery/2026-08-22-workshop-selfie/photo.jpg" alt="Trying on our wedding rings, fresh off the workbench" loading="lazy" />
+            <figcaption>
+              <time datetime="2026-08-22">August 22, 2026</time>
+              <span class="photo-caption">Trying on our wedding rings, fresh off the workbench</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ol>
+    </main>
+  </div>
+</body>
+</html>
